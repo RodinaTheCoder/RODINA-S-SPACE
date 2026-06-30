@@ -5,7 +5,7 @@ html, body {
 
 /* Main font */
 body {
-   font-family: 'Roboto', sans-serif;
+    font-family: 'Roboto', sans-serif;
 }
 
 /* Reset default spacing + smooth scroll */
@@ -104,7 +104,6 @@ hr{
     background-color: #00adb5;
     border-radius: 24px;
     text-decoration: none;
-    padding: 0,5rem 1.5rem; /* note: comma here (as written) */
     text-shadow: 0px 4px 4px rgba(0, 0, 0, 0.5);
     padding: 10px 20px; 
 }
@@ -132,7 +131,7 @@ hr{
     margin: 5rem auto;
     max-width: 1200px;
     gap: 3rem;
-    padding: 0 1rem; /* adjust text position if needed */
+    padding: 0 1rem; 
     text-align: center;
 }
 
@@ -140,6 +139,13 @@ hr{
 .container {
     display: flex;
     flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    margin: 0 auto;
+    max-width: 1200px;
+    text-align: center;
+    gap: 3rem;
+    padding: 1rem 1rem;
 }
 
 /* About title group */
@@ -170,29 +176,21 @@ hr{
 
 .works {
     background-image: url("assets/svg/background.svg");
-    height: 100vh;
+    background-size: cover;
+    background-position: center;
+    min-height: 100vh; /* تعديل هنا لتفادي مشكلة الـ overflow */
     display: flex;
     justify-content: center;
     align-items: center;
-}
-
-.container{
-    display: flex;
-    flex-direction: column;
-    justify-content: center;
-    align-items: center;
-    margin: 0 auto;
-    max-width: 1200px;
-    text-align: center;
+    padding: 4rem 0; /* مساحة داخلية مريحة */
 }
 
 /* Works title */
 .worksnames {
     display: flex;
     align-items: center;
-    justify-content: flex-start;
+    justify-content: center;
     gap: 20px;
-    padding-left: 2rem;
     margin-bottom: 50px;
 }
 
@@ -212,13 +210,12 @@ hr{
     list-style-type: none;
     align-items: center;
     justify-content: center;
-    gap: 3rem;
+    gap: 2rem;
     flex-wrap: wrap;
     width: 100%;
     max-width: 1200px; 
     margin: 0 auto; 
-    padding: 2rem;
-    box-sizing: border-box;
+    padding: 1rem;
 }
 
 .works li {
@@ -226,14 +223,10 @@ hr{
     border-radius: 16px;
     background-color: rgba(57, 62, 70, 0.75);
     backdrop-filter: blur(3px);
-
-    box-sizing: border-box;
     display: flex;
     justify-content: center;
     align-items: center;
     padding: 1rem;
-
-    /* width: 320px;  */
     height: 250px;
     width: calc(33.33% - 2rem); 
     min-width: 280px;
@@ -249,7 +242,7 @@ hr{
 }
 
 /* Hover scale effect */
-.works li :hover {
+.works li:hover img {
     transform: scale(1.1);
 }
 
@@ -264,18 +257,6 @@ hr{
 }
 
 /* ===== Contact Section ===== */
-
-.container{
-    display: flex;
-    flex-direction: column;
-    justify-content: center;
-    align-items: center;
-    gap: 3rem;
-    margin: 0 auto;
-    max-width: 1200px;
-    padding: 1rem 1rem;
-    text-align: center;
-}
 
 .contactnames {
     display: flex;
@@ -355,22 +336,19 @@ footer {
 
 @media (max-width: 1023px){
 
-    * {
-        box-sizing: border-box;
-    }
-
-    body {
-        overflow-x: hidden;
-    }
-
     header {
         margin: 0 1rem;
     }
 
     .hero {
         flex-direction: column;
-        align-items: flex-start;
+        align-items: center;
+        text-align: center;
         gap: 2rem;
+    }
+
+    .heroSub {
+        align-items: center;
     }
 
     .arrow {
@@ -380,11 +358,6 @@ footer {
     .heroImg {
         width: 100%;
         max-width: 350px;
-    }
-
-    .title {
-        font-size: 2rem;
-        text-align: center;
     }
 
     .about {
@@ -398,35 +371,35 @@ footer {
         max-width: 350px;
     }
 
-    .container {
-        align-items: center;
-        margin: 0 1rem;
-        padding: 3rem 0;
-        gap: 2rem;
-    }
-
     .light {
         width: 50px;
     }
 
     .works {
-        padding: 0 1rem;
+        padding: 2rem 1rem;
     }
 
-    .title {
-        margin-left: 0;
-        text-align: center;
+    .worksnames {
+        font-size: 1.5rem;
+    }
+    
+    .worksname, .workstitle {
+        font-size: 2.5rem;
     }
 
     .works ul {
         flex-direction: column;
-        gap: 1rem;
+        gap: 1.5rem;
+    }
+
+    .works li {
+        width: 100%;
+        max-width: 340px;
     }
 
     .contact {
         flex-direction: column;
         gap: 1rem;
-        margin-right: 0;
         padding: 0 1rem;
     }
 }
@@ -436,21 +409,7 @@ footer {
         gap: 5rem;
     }
 
-    /* Give each item enough width */
     .email, .phone {
         min-width: 30px;
     }
 }
-
-
-
-
-
-
-
-
-
-
-
-
-
